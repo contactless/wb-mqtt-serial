@@ -266,6 +266,194 @@ Ports:
                 PollInterval: 10
                 ErrorValue: 18446744073709551615
                 WordOrder: BigEndian
+        ------
+        Id: msu34tlp_0x92_0
+        Name: MSU34+TLP 0x92 (at /dev/ttyNSC0) 1
+        SlaveId: 0x92
+        MaxRegHole: 0
+        MaxBitHole: 0
+        MaxReadRegisters: 1
+        GuardInterval: 20000
+        DeviceTimeout: 3000
+        DeviceChannels:
+            ------
+            Name: Temp 1
+            Type: temperature
+            DeviceId: msu34tlp_0x92_0
+            Order: 1
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 0
+                Format: S8
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Illuminance
+            Type: lux
+            DeviceId: msu34tlp_0x92_0
+            Order: 2
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 1
+                Format: U16
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Pressure
+            Type: pressure
+            DeviceId: msu34tlp_0x92_0
+            Order: 3
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 2
+                Format: U16
+                Scale: 0.075
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Temp 2
+            Type: temperature
+            DeviceId: msu34tlp_0x92_0
+            Order: 4
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 3
+                Format: S8
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
+        ------
+        Id: msu34tlp_0x93
+        Name: MSU34+TLP 0x92 (at /dev/ttyNSC0) 2
+        SlaveId: 0x93
+        MaxRegHole: 0
+        MaxBitHole: 0
+        MaxReadRegisters: 1
+        GuardInterval: 20000
+        DeviceTimeout: 3000
+        DeviceChannels:
+            ------
+            Name: Temp 1
+            Type: temperature
+            DeviceId: msu34tlp_0x93
+            Order: 1
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 0
+                Format: S8
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Illuminance
+            Type: lux
+            DeviceId: msu34tlp_0x93
+            Order: 2
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 1
+                Format: U16
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Pressure
+            Type: pressure
+            DeviceId: msu34tlp_0x93
+            Order: 3
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 2
+                Format: U16
+                Scale: 0.075
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Temp 2
+            Type: temperature
+            DeviceId: msu34tlp_0x93
+            Order: 4
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 3
+                Format: S8
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 10
+                ErrorValue: not set
+                WordOrder: BigEndian
     ------
     ConnSettings: </dev/ttyNSC1 9600 8 N1 timeout 500>
     PollInterval: 100
@@ -493,6 +681,100 @@ Ports:
             Registers:
                 ------
                 Type and Address: input: 0
+                Format: S8
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 100
+                ErrorValue: not set
+                WordOrder: BigEndian
+        ------
+        Id: msu34tlp_0x92_1
+        Name: MSU34+TLP 0x92 (at /dev/ttyNSC1)
+        SlaveId: 0x92
+        MaxRegHole: 0
+        MaxBitHole: 0
+        MaxReadRegisters: 1
+        GuardInterval: 20000
+        DeviceTimeout: 3000
+        DeviceChannels:
+            ------
+            Name: Temp 1
+            Type: temperature
+            DeviceId: msu34tlp_0x92_1
+            Order: 1
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 0
+                Format: S8
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 100
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Illuminance
+            Type: lux
+            DeviceId: msu34tlp_0x92_1
+            Order: 2
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 1
+                Format: U16
+                Scale: 1
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 100
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Pressure
+            Type: pressure
+            DeviceId: msu34tlp_0x92_1
+            Order: 3
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 2
+                Format: U16
+                Scale: 0.075
+                Offset: 0
+                RoundTo: 0
+                Poll: 1
+                ReadOnly: 1
+                TypeName: input
+                PollInterval: 100
+                ErrorValue: not set
+                WordOrder: BigEndian
+            ------
+            Name: Temp 2
+            Type: temperature
+            DeviceId: msu34tlp_0x92_1
+            Order: 4
+            OnValue: 
+            Max: -1
+            ReadOnly: 1
+            Registers:
+                ------
+                Type and Address: input: 3
                 Format: S8
                 Scale: 1
                 Offset: 0

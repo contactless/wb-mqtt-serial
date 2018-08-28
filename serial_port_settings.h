@@ -32,6 +32,11 @@ struct TSerialPortSettings final: TPortSettings
         return ss.str();
     }
 
+    std::string GetNamePostfix() const override
+    {
+        return "(at " + Device + ")";
+    }
+
     std::string Device;
     int         BaudRate;
     char        Parity;
@@ -46,4 +51,3 @@ inline ::std::ostream& operator<<(::std::ostream& os, const TSerialPortSettings&
         " " << settings.DataBits << " " << settings.Parity << settings.StopBits <<
         " timeout " << settings.ResponseTimeout.count() << ">";
 }
-

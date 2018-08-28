@@ -90,6 +90,15 @@
                             "error_value" : "0xFFFFFFFFFFFFFFFF"
                         }
                     ]
+                },
+                {
+                    "slave_id": "0x92",
+                    "device_type": "MSU34"
+                },
+                {
+                    "name": "MSU34+TLP 0x92",
+                    "slave_id": "0x93",
+                    "device_type": "MSU34"
                 }
             ]
         },
@@ -184,6 +193,10 @@
                 {
                     "device_type" : "TestDeviceOverride",
                     "slave_id": 6
+                },
+                {
+                    "slave_id": "0x92",
+                    "device_type": "MSU34"
                 }
             ]
         },

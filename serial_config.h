@@ -162,6 +162,7 @@ private:
     int GetInt(const Json::Value& obj, const std::string& key);
     int ToInt(const Json::Value& v, const std::string& title);
     uint64_t ToUint64(const Json::Value& v, const std::string& title);
+    void ResolveDeviceCollisions() const;
 
     std::string ConfigFileName;
     PHandlerConfig HandlerConfig;

@@ -469,9 +469,81 @@ PHandlerConfig TConfigParser::Parse()
     LoadConfig();
 
     // check duplicate devices
-
+    ResolveDeviceCollisions();
 
     return HandlerConfig;
+}
+
+void TConfigParser::ResolveDeviceCollisions() const
+{
+    unordered_map<string, pair<int, PDeviceConfig>> seen_ids;
+    unordered_map<string, map<int, set<PDeviceConfig>>> collisions_by_id;
+
+    unordered_map<string, pair<PPortConfig, PDeviceConfig>> seen_names;
+    unordered_map<string, map<PPortConfig, set<PDeviceConfig>>> collisions_by_name;
+
+    int port_index = 0;
+    for (auto port_config: HandlerConfig->PortConfigs) {
+        for (auto device_config: port_config->DeviceConfigs) {
+            {   // ids
+                auto ins_res = seen_ids.insert({device_config->Id, {port_index, device_config}});
+
+                if (!ins_res.second) {   // collision
+                    auto & collisions = collisions_by_id[device_config->Name];
+                    collisions[ins_res.first->second.first].insert(ins_res.first->second.second);
+                    collisions[port_index].insert(device_config);
+                }
+            }
+
+            {   // names
+                auto ins_res = seen_names.insert({device_config->Name, {port_config, device_config}});
+
+                if (!ins_res.second) {   // collision
+                    auto & collisions = collisions_by_name[device_config->Name];
+                    collisions[ins_res.first->second.first].insert(ins_res.first->second.second);
+                    collisions[port_config].insert(device_config);
+                }
+            }
+        }
+        ++port_index;
+    }
+
+    for (const auto & id_collisions: collisions_by_id) {
+        auto port_count = id_collisions.second.size();
+
+        if (port_count == 1) {   // no point in differentiating by port if there is only one port
+            continue;
+        }
+
+        for (const auto & port_index_device: id_collisions.second) {
+            const auto port_index = port_index_device.first;
+
+            for (const auto & device_config: port_index_device.second) {
+                device_config->Id += "_" + to_string(port_index);
+
+                for (const auto & device_channel_config: device_config->DeviceChannelConfigs) {
+                    device_channel_config->DeviceId = device_config->Id;
+                }
+            }
+        }
+    }
+
+    for (const auto & name_collisions: collisions_by_name) {
+        auto port_count = name_collisions.second.size();
+
+        for (const auto & port_device: name_collisions.second) {
+            const auto & port_config = port_device.first;
+            auto device_count = port_device.second.size();
+            int n = 1;
+            for (const auto & device_config: port_device.second) {
+                if (port_count > 1)
+                    device_config->Name += " " + port_config->ConnSettings->GetNamePostfix();
+
+                if (device_count > 1)
+                    device_config->Name += " " + to_string(n++);
+            }
+        }
+    }
 }
 
 void TConfigParser::LoadDevice(PPortConfig port_config,

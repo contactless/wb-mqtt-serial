@@ -1,3 +1,9 @@
+wb-mqtt-serial (1.44.2) stable; urgency=medium
+
+  * fix MQTT topic and device name collision across different ports
+
+ -- Islam Boziev <i.boziev@wirenboard.ru>  Wed, 25 Apr 2018 17:12:41 +0300
+
 wb-mqtt-serial (1.44.1) stable; urgency=medium
 
   * fix MAI2-mini/CC template
