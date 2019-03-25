@@ -1,3 +1,9 @@
+wb-mqtt-serial (1.49.2) stable; urgency=medium
+
+  * add WB-MR6 template 
+
+ -- Pavel Poglazov <poglazov@contactless.ru> Thu, 21 Mar 2019 16:47:00 +0300
+
 wb-mqtt-serial (1.49.1) stable; urgency=medium
 
   * add  wb-mrm2-mini template 
