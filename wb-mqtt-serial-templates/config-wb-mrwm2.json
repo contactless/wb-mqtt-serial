@@ -1,0 +1,110 @@
+{
+    "device_type" : "WB-MRWM2",
+    "device" : {
+        "name" : "WB-MRWM2",
+        "id" : "wb-mrwm2",
+        "max_read_registers": 0,
+        "channels" : [
+            {
+                "name" : "K1",
+                "reg_type" : "coil",
+                "address" : 0,
+                "type": "switch"
+            },
+            {
+                "name" : "K2",
+                "reg_type" : "coil",
+                "address" : 1,
+                "type": "switch"
+            },
+            {
+                "name" : "Voltage K1",
+                "reg_type" : "input",
+                "address" : 500,
+                "type" : "voltage",
+                "scale" : 0.01
+            },
+            {
+                "name" : "Voltage K2",
+                "reg_type" : "input",
+                "address" : 504,
+                "type" : "voltage",
+                "scale" : 0.01
+            },
+            {
+                "name" : "Power K1",
+                "reg_type" : "input",
+                "address" : 501,
+                "type" : "power",
+                "scale" : 0.1
+            },
+            {
+                "name" : "Power K2",
+                "reg_type" : "input",
+                "address" : 505,
+                "type" : "power",
+                "scale" : 0.1
+            },
+            {
+                "name" : "Energy K1",
+                "reg_type" : "input",
+                "address" : 502,
+                "type" : "power_consumption",
+                "scale" : 0.1,
+                "format": "u32"
+            },
+            {
+                "name" : "Energy K2",
+                "reg_type" : "input",
+                "address" : 504,
+                "type" : "power_consumption",
+                "scale" : 0.1,
+                "format": "u32"
+            },
+            {
+                "name" : "Safety Timer",
+                "reg_type" : "holding",
+                "address" : 8,
+                "type" : "range"
+            },
+            {
+                "name" : "Input 1",
+                "reg_type" : "discrete",
+                "address" : 0,
+                "type" : "switch"
+            },
+            {
+                "name" : "Input 2",
+                "reg_type" : "discrete",
+                "address" : 1,
+                "type" : "switch"
+            },
+            {
+                "name": "Input 1 counter",
+                "reg_type": "input",
+                "address": 32,
+                "type": "value"
+            },
+            {
+                "name": "Input 2 counter",
+                "reg_type": "input",
+                "address": 33,
+                "type": "value"
+            },
+            {
+                "name" : "Supply voltage",
+                "reg_type" : "input",
+                "address" : 121,
+                "type" : "voltage",
+                "scale" : 0.001
+            },
+            {
+                "name": "Serial NO",
+                "type": "text",
+                "reg_type": "holding",
+                "address": 270,
+                "format": "u32"
+            }
+        ]
+    }
+}
