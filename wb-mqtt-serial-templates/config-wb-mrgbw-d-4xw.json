@@ -1,49 +1,57 @@
 {
-    "device_type": "WB-MRGBW-D", 
+    "device_type": "WB-MRGBW-D 4xW", 
     "device": {
-        "name": "WB-MRGBW-D", 
+        "name": "WB-MRGBW-D 4xW", 
         "id": "wb-mrgbw-d", 
         "max_read_registers": 0, 
         "channels": [
             {
-                "name": "RGB", 
-                "type": "rgb", 
-                "consists_of": [
-                    {
-                        "reg_type": "holding", 
-                        "address": 1
-                    }, 
-                    {
-                        "reg_type": "holding", 
-                        "address": 0
-                    }, 
-                    {
-                        "reg_type": "holding", 
-                        "address": 2
-                    }
-                ]
-            },
-            {
-                "name" : "RGB State",
+                "name" : "CH1 State",
                 "reg_type" : "coil",
-                "address" : 4,
+                "address" : 0,
                 "type": "switch"
             },
             {
-                "name" : "White State",
+                "name" : "CH2 State",
+                "reg_type" : "coil",
+                "address" : 1,
+                "type": "switch"
+            },
+            {
+                "name" : "CH3 State",
+                "reg_type" : "coil",
+                "address" : 2,
+                "type": "switch"
+            },
+            {
+                "name" : "CH4 State",
                 "reg_type" : "coil",
                 "address" : 3,
                 "type": "switch"
             },
             {
-                "name": "RGB Brightnes", 
+                "name": "CH1 Brightnes", 
                 "reg_type": "holding", 
-                "address": 22, 
+                "address": 0, 
                 "type": "range", 
                 "max": 255
             },
             {
-                "name": "White", 
+                "name": "CH2 Brightnes", 
+                "reg_type": "holding", 
+                "address": 1, 
+                "type": "range", 
+                "max": 255
+            },
+            {
+                "name": "CH3 Brightnes",
+                "reg_type": "holding", 
+                "address": 2, 
+                "type": "range", 
+                "max": 255
+            },
+            {
+                "name": "CH4 Brightnes",
                 "reg_type": "holding", 
                 "address": 3, 
                 "type": "range", 
@@ -98,5 +106,4 @@
         ]
     }
 }
-
 

@@ -1,3 +1,9 @@
+wb-mqtt-serial (1.58.0) stable; urgency=medium
+
+  * add wb-mrgbw-d 2 templates
+
+ -- Dmitrii Malenda <dmitry.malenda@wirenboard.ru>  Thu, 20 Feb 2020 11:28:00 +0300
+ 
 wb-mqtt-serial (1.57.0) stable; urgency=medium
 
   * add wb-mr6cu template
