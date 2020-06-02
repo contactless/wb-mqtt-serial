@@ -1,0 +1,124 @@
+{
+    "device_type": "WB-MRGBW-D (4 independent channels)",
+    "device": {
+        "name": "WB-MRGB (4 independent channels)",
+        "id": "wb-mrgb",
+        "setup": [
+            {
+                "title": "Set mode to 1",
+                "address": 10,
+                "value": 1
+            }
+        ],
+        "channels": [
+            {
+                "name": "Enable B",
+                "reg_type": "coil",
+                "address": 0,
+                "type": "switch"
+            },
+            {
+                "name": "Enable R",
+                "reg_type": "coil",
+                "address": 1,
+                "type": "switch"
+            },
+            {
+                "name": "Enable G",
+                "reg_type": "coil",
+                "address": 2,
+                "type": "switch"
+            },
+            {
+                "name": "Enable W",
+                "reg_type": "coil",
+                "address": 3,
+                "type": "switch"
+            },
+            {
+                "name": "Brightness B",
+                "reg_type": "holding",
+                "address": 0,
+                "type": "range",
+                "max": 255
+            },
+            {
+                "name": "Brightness R",
+                "reg_type": "holding",
+                "address": 1,
+                "type": "range",
+                "max": 255
+            },
+            {
+                "name": "Brightness G",
+                "reg_type": "holding",
+                "address": 2,
+                "type": "range",
+                "max": 255
+            },
+            {
+                "name": "Brightness W",
+                "reg_type": "holding",
+                "address": 3,
+                "type": "range",
+                "max": 255
+            },
+            {
+                "name": "Input 1",
+                "reg_type": "discrete",
+                "readonly": true,
+                "address": 0,
+                "type": "switch"
+            },
+            {
+                "name": "Input 2",
+                "reg_type": "discrete",
+                "readonly": true,
+                "address": 1,
+                "type": "switch"
+            },
+            {
+                "name": "Input 3",
+                "reg_type": "discrete",
+                "readonly": true,
+                "address": 2,
+                "type": "switch"
+            },
+            {
+                "name": "Input 1 counter",
+                "reg_type": "input",
+                "readonly": true,
+                "address": 32,
+                "type": "value"
+            },
+            {
+                "name": "Input 2 counter",
+                "reg_type": "input",
+                "readonly": true,
+                "address": 33,
+                "type": "value"
+            },
+            {
+                "name": "Input 3 counter",
+                "reg_type": "input",
+                "readonly": true,
+                "address": 34,
+                "type": "value"
+            },
+            {
+                "name": "Supply voltage",
+                "reg_type": "input",
+                "address": 121,
+                "type": "voltage",
+                "scale": 0.001
+            },
+            {
+                "name": "Serial",
+                "type": "text",
+                "reg_type": "input",
+                "address": 270,
+                "format": "u32"
+            }
+        ]
+    }
+}
