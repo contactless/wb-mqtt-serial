@@ -1,0 +1,513 @@
+{
+  "device_type": "WB-MAP3ET",
+  "device": {
+    "name": "WB-MAP3ET",
+    "id": "wb-map3et",
+    "max_read_registers": 60,
+    "response_timeout_ms": 1,
+    "frame_timeout_ms": 15,
+    "channels": [
+      {
+        "name": "L1",
+        "id": "",
+        "device_type": "phase L1"
+      },
+      {
+        "name": "L2",
+        "id": "",
+        "device_type": "phase L2",
+        "stride": 1
+      },
+      {
+        "name": "L3",
+        "id": "",
+        "device_type": "phase L3",
+        "stride": 2
+      },
+      {
+        "name": "Total P",
+        "reg_type": "input",
+        "address": "0x1300",
+        "type": "power",
+        "format": "s32",
+        "scale": 0.00512,
+        "round_to": 0.01
+      },
+      {
+        "name": "Total Q",
+        "reg_type": "input",
+        "address": "0x1308",
+        "type": "value",
+        "format": "s32",
+        "scale": 0.00512,
+        "round_to": 0.01
+      },
+      {
+        "name": "Total S",
+        "reg_type": "input",
+        "address": "0x1310",
+        "type": "value",
+        "format": "s32",
+        "scale": 0.00512,
+        "round_to": 0.01
+      },
+      {
+        "name": "Total PF",
+        "reg_type": "input",
+        "address": "0x10bc",
+        "type": "value",
+        "format": "s16",
+        "scale": 0.001,
+        "round_to": 0.01
+      },
+      {
+        "name": "Total AP energy",
+        "reg_type": "input",
+        "address": "0x1200",
+        "type": "power_consumption",
+        "format": "u64",
+        "scale": 1e-05,
+        "round_to": 1e-06,
+        "word_order": "little_endian"
+      },
+      {
+        "name": "Total RP energy",
+        "reg_type": "input",
+        "address": "0x1220",
+        "type": "value",
+        "format": "u64",
+        "scale": 1e-05,
+        "round_to": 1e-06,
+        "word_order": "little_endian"
+      },
+      {
+        "name": "Frequency",
+        "reg_type": "input",
+        "address": "0x10f8",
+        "type": "value",
+        "format": "u16",
+        "scale": 0.01,
+        "round_to": 0.01
+      },
+      {
+        "name": "Uptime",
+        "reg_type": "input",
+        "address": 104,
+        "format": "u32",
+        "enabled": false
+      },
+      {
+        "name": "Supply voltage",
+        "reg_type": "input",
+        "address": 121,
+        "scale": 0.001,
+        "type": "voltage",
+        "enabled": false
+      }
+    ],
+    "subdevices": [
+      {
+        "device_type": "phase L1",
+        "device": {
+          "channels": [
+            {
+              "name": "Urms",
+              "id": "Urms L1",
+              "reg_type": "input",
+              "address": "0x1410",
+              "type": "voltage",
+              "format": "u32",
+              "error_value": "0xFFFFFFFF",
+              "scale": 1.52588e-07,
+              "round_to": 0.001
+            },
+            {
+              "name": "Upeak",
+              "id": "Upeak L1",
+              "reg_type": "input",
+              "address": "0x1810",
+              "type": "voltage",
+              "format": "s32",
+              "error_value": "0x7FFFFFFF",
+              "scale": 0.01,
+              "round_to": 0.01,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "Voltage angle",
+              "id": "Voltage angle L1",
+              "reg_type": "input",
+              "address": "0x10fd",
+              "type": "value",
+              "format": "s16",
+              "error_value": "0x7FFF",
+              "scale": 0.1,
+              "round_to": 0.01
+            },
+            {
+              "name": "Irms",
+              "id": "Irms L1",
+              "reg_type": "input",
+              "address": "0x1416",
+              "type": "value",
+              "format": "u32",
+              "scale": 2.44141e-07,
+              "round_to": 0.0001
+            },
+            {
+              "name": "Ipeak",
+              "id": "Ipeak L1",
+              "reg_type": "input",
+              "address": "0x1818",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.016,
+              "round_to": 0.01,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "P",
+              "id": "P L1",
+              "reg_type": "input",
+              "address": "0x1302",
+              "type": "power",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "Q",
+              "id": "Q L1",
+              "reg_type": "input",
+              "address": "0x130a",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "S",
+              "id": "S L1",
+              "reg_type": "input",
+              "address": "0x1312",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "PF",
+              "id": "PF L1",
+              "reg_type": "input",
+              "address": "0x10bd",
+              "type": "value",
+              "format": "s16",
+              "scale": 0.001,
+              "round_to": 0.01
+            },
+            {
+              "name": "AP energy",
+              "id": "AP energy L1",
+              "reg_type": "input",
+              "address": "0x1204",
+              "type": "power_consumption",
+              "format": "u64",
+              "scale": 1e-05,
+              "round_to": 1e-06,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "RP energy",
+              "id": "RP energy L1",
+              "reg_type": "input",
+              "address": "0x1224",
+              "type": "value",
+              "format": "u64",
+              "scale": 1e-05,
+              "round_to": 1e-06,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "Phase angle",
+              "id": "Phase angle L1",
+              "reg_type": "input",
+              "address": "0x10f9",
+              "type": "value",
+              "format": "s16",
+              "scale": 0.1,
+              "round_to": 0.01
+            }
+          ]
+        }
+      },
+      {
+        "device_type": "phase L2",
+        "device": {
+          "channels": [
+            {
+              "name": "Urms",
+              "id": "Urms L2",
+              "reg_type": "input",
+              "address": "0x1410",
+              "type": "voltage",
+              "format": "u32",
+              "error_value": "0xFFFFFFFF",
+              "scale": 1.52588e-07,
+              "round_to": 0.001
+            },
+            {
+              "name": "Upeak",
+              "id": "Upeak L2",
+              "reg_type": "input",
+              "address": "0x1810",
+              "type": "voltage",
+              "format": "s32",
+              "error_value": "0x7FFFFFFF",
+              "scale": 0.01,
+              "round_to": 0.01,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "Voltage angle",
+              "id": "Voltage angle L2",
+              "reg_type": "input",
+              "address": "0x10fd",
+              "type": "value",
+              "format": "s16",
+              "error_value": "0x7FFF",
+              "scale": 0.1,
+              "round_to": 0.01
+            },
+            {
+              "name": "Irms",
+              "id": "Irms L2",
+              "reg_type": "input",
+              "address": "0x1416",
+              "type": "value",
+              "format": "u32",
+              "scale": 2.44141e-07,
+              "round_to": 0.0001
+            },
+            {
+              "name": "Ipeak",
+              "id": "Ipeak L2",
+              "reg_type": "input",
+              "address": "0x1818",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.016,
+              "round_to": 0.01,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "P",
+              "id": "P L2",
+              "reg_type": "input",
+              "address": "0x1302",
+              "type": "power",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "Q",
+              "id": "Q L2",
+              "reg_type": "input",
+              "address": "0x130a",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "S",
+              "id": "S L2",
+              "reg_type": "input",
+              "address": "0x1312",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "PF",
+              "id": "PF L2",
+              "reg_type": "input",
+              "address": "0x10bd",
+              "type": "value",
+              "format": "s16",
+              "scale": 0.001,
+              "round_to": 0.01
+            },
+            {
+              "name": "AP energy",
+              "id": "AP energy L2",
+              "reg_type": "input",
+              "address": "0x1204",
+              "type": "power_consumption",
+              "format": "u64",
+              "scale": 1e-05,
+              "round_to": 1e-06,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "RP energy",
+              "id": "RP energy L2",
+              "reg_type": "input",
+              "address": "0x1224",
+              "type": "value",
+              "format": "u64",
+              "scale": 1e-05,
+              "round_to": 1e-06,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "Phase angle",
+              "id": "Phase angle L2",
+              "reg_type": "input",
+              "address": "0x10f9",
+              "type": "value",
+              "format": "s16",
+              "scale": 0.1,
+              "round_to": 0.01
+            }
+          ]
+        }
+      },
+      {
+        "device_type": "phase L3",
+        "device": {
+          "channels": [
+            {
+              "name": "Urms",
+              "id": "Urms L3",
+              "reg_type": "input",
+              "address": "0x1410",
+              "type": "voltage",
+              "format": "u32",
+              "error_value": "0xFFFFFFFF",
+              "scale": 1.52588e-07,
+              "round_to": 0.001
+            },
+            {
+              "name": "Upeak",
+              "id": "Upeak L3",
+              "reg_type": "input",
+              "address": "0x1810",
+              "type": "voltage",
+              "format": "s32",
+              "error_value": "0x7FFFFFFF",
+              "scale": 0.01,
+              "round_to": 0.01,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "Voltage angle",
+              "id": "Voltage angle L3",
+              "reg_type": "input",
+              "address": "0x10fd",
+              "type": "value",
+              "format": "s16",
+              "error_value": "0x7FFF",
+              "scale": 0.1,
+              "round_to": 0.01
+            },
+            {
+              "name": "Irms",
+              "id": "Irms L3",
+              "reg_type": "input",
+              "address": "0x1416",
+              "type": "value",
+              "format": "u32",
+              "scale": 2.44141e-07,
+              "round_to": 0.0001
+            },
+            {
+              "name": "Ipeak",
+              "id": "Ipeak L3",
+              "reg_type": "input",
+              "address": "0x1818",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.016,
+              "round_to": 0.01,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "P",
+              "id": "P L3",
+              "reg_type": "input",
+              "address": "0x1302",
+              "type": "power",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "Q",
+              "id": "Q L3",
+              "reg_type": "input",
+              "address": "0x130a",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "S",
+              "id": "S L3",
+              "reg_type": "input",
+              "address": "0x1312",
+              "type": "value",
+              "format": "s32",
+              "scale": 0.00512,
+              "round_to": 0.01
+            },
+            {
+              "name": "PF",
+              "id": "PF L3",
+              "reg_type": "input",
+              "address": "0x10bd",
+              "type": "value",
+              "format": "s16",
+              "scale": 0.001,
+              "round_to": 0.01
+            },
+            {
+              "name": "AP energy",
+              "id": "AP energy L3",
+              "reg_type": "input",
+              "address": "0x1204",
+              "type": "power_consumption",
+              "format": "u64",
+              "scale": 1e-05,
+              "round_to": 1e-06,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "RP energy",
+              "id": "RP energy L3",
+              "reg_type": "input",
+              "address": "0x1224",
+              "type": "value",
+              "format": "u64",
+              "scale": 1e-05,
+              "round_to": 1e-06,
+              "word_order": "little_endian"
+            },
+            {
+              "name": "Phase angle",
+              "id": "Phase angle L3",
+              "reg_type": "input",
+              "address": "0x10f9",
+              "type": "value",
+              "format": "s16",
+              "scale": 0.1,
+              "round_to": 0.01
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

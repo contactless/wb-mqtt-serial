@@ -1,8 +1,8 @@
-wb-mqtt-serial (2.7.4) stable; urgency=medium
+wb-mqtt-serial (2.7.6) stable; urgency=medium
 
-  * Timeouts for NEVA and Energomera CE301/CE303 energy meters are adjusted
+  * Add WB-MAP3ET template for the new version of wb-mqtt-serial.
 
- -- Petr Krasnoshchekov <petr.krasnoshchekov@wirenboard.ru>  Tue, 30 Mar 2021 14:34:00 +0500
+ -- Alexander Degtyarev <a.degtyarev@wirenboard.com>  Tue, 12 Apr 2021 18:19:00 +0400
 
 wb-mqtt-serial (2.7.3) stable; urgency=medium
 
