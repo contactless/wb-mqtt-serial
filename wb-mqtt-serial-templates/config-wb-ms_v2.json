@@ -6,93 +6,295 @@
         "max_read_registers": 0,
         "response_timeout_ms": 1,
         "frame_timeout_ms": 12,
+
+        "groups": [
+            {
+                "title": "Air Quality",
+                "id": "air_quality",
+                "order": 1
+            },
+            {
+                "title": "Illuminance",
+                "id": "illuminance",
+                "order": 2
+            },
+            {
+                "title": "Inputs",
+                "id": "inputs",
+                "order": 3
+            },
+            {
+                "title": "General Settings",
+                "id": "general",
+                "order": 4
+            },
+            {
+                "title": "HW Info",
+                "id": "hw_info",
+                "order": 5
+            },
+            {
+                "title": "Debug",
+                "id": "debug",
+                "order": 6
+            }
+        ],
+
         "parameters": {
-          "in1_mode": {
-            "title": "Input 1 mode",
-            "address": 275,
-            "enum": [ 0, 1 ],
-            "default": 0,
-            "enum_titles": [ "1-Wire", "discrete input"]
-          },
-          "in2_mode": {
-            "title": "Input 2 mode",
-            "address": 276,
-            "enum": [ 0, 1 ],
-            "default": 0,
-            "enum_titles": [ "1-Wire", "discrete input"]
-          }
+            "th_sensor_heater_enabled": {
+                "title": "TH Sensor Heater Enabled",
+                "address": 2,
+                "reg_type": "coil",
+                "enum":	[ 0, 1 ],
+                "enum_titles": [ "no", "yes" ],
+                "default": 0,
+                "group": "air_quality",
+                "order": 1
+            },
+            "selfheating_compensation_deg": {
+                "title": "Self-Heating Compensation (°C)",
+                "address": 245,
+                "reg_type": "holding",
+                "format": "s16",
+                "scale": 0.01,
+                "group": "air_quality",
+                "order": 2
+            },
+            "illuminance_filter_time_const_ms": {
+                "title": "Low-pass Filter Time Constant (ms)",
+                "address": 90,
+                "reg_type": "holding",
+                "scale": 0.1,
+                "default": 20,
+                "group": "illuminance",
+                "order": 1
+            },
+            "input1_mode": {
+                "title": "Input 1 Mode",
+                "address": 275,
+                "reg_type": "holding",
+                "enum": [ 0, 1 ],
+                "enum_titles": [ "1-Wire", "discrete input"],
+                "default": 0,
+                "group": "inputs",
+                "order": 1
+            },
+            "input2_mode": {
+                "title": "Input 2 Mode",
+                "address": 276,
+                "reg_type": "holding",
+                "enum": [ 0, 1 ],
+                "enum_titles": [ "1-Wire", "discrete input"],
+                "default": 0,
+                "group": "inputs",
+                "order": 2
+            },
+            "temperature_readings_filter_deg": {
+                "title": "Erroneous Temperature Readings Filter (°C)",
+                "address": 99,
+                "reg_type": "holding",
+                "scale": 0.0625,
+                "default": 1,
+                "group": "inputs",
+                "order": 3
+            },
+            "rs485_response_delay_ms": {
+                "title": "RS-485 Response Delay (ms)",
+                "address": 113,
+                "reg_type": "holding",
+                "default": 8,
+                "group": "general",
+                "order": 1
+            }
         },
+
         "channels": [
             {
                 "name": "Temperature",
                 "reg_type": "input",
-                "address": 4,
+                "address": 0,
                 "type": "temperature",
                 "format": "s16",
-                "scale": 0.01,
-                "error_value": "0x7FFF"
+                "scale": 0.1,
+                "error_value": "0x7FFF",
+                "group": "air_quality"
             },
             {
                 "name": "Humidity",
                 "reg_type": "input",
-                "address": 5,
+                "address": 1,
                 "type": "rel_humidity",
-                "scale": 0.01,
-                "error_value": "0xFFFF"
-            },
-            {
-                "name": "Illuminance",
-                "reg_type": "input",
-                "address": 2,
-                "type": "lux"
+                "format": "s16",
+                "scale": 0.1,
+                "error_value": "0xFFFF",
+                "group": "air_quality"
             },
             {
                 "name": "Air Quality (VOC)",
                 "reg_type": "input",
                 "address": 11,
                 "type": "concentration",
-                "scale": 1,
-                "error_value": "0xFFFF"
+                "error_value": "0xFFFF",
+                "group": "air_quality"
+            },
+            {
+                "name": "VOC Baseline",
+                "reg_type": "input",
+                "address": 106,
+                "enabled": false,
+                "group": "air_quality"
+            },
+            {
+                "name": "Illuminance",
+                "reg_type": "input",
+                "address": 2,
+                "type": "lux",
+                "group": "illuminance"
             },
             {
                 "name": "External Sensor 1",
-                "type": "temperature",
                 "reg_type": "input",
                 "address": "6",
+                "type": "temperature",
                 "format": "s16",
                 "scale": 0.0625,
-                "error_value": "0x7FFF"
+                "error_value": "0x7FFF",
+                "group": "inputs"
             },
             {
                 "name": "External Sensor 2",
-                "type": "temperature",
                 "reg_type": "input",
                 "address": "7",
+                "type": "temperature",
                 "format": "s16",
                 "scale": 0.0625,
-                "error_value": "0x7FFF"
+                "error_value": "0x7FFF",
+                "group": "inputs"
+            },
+            {
+                "name": "Input 1",
+                "reg_type": "discrete",
+                "address": 0,
+                "type": "switch",
+                "enabled": false,
+                "group": "inputs"
+            },
+            {
+                "name": "Input 1 Counter",
+                "reg_type": "input",
+                "address": 277,
+                "type": "value",
+                "enabled": false,
+                "group": "inputs"
+            },
+            {
+                "name": "Input 2",
+                "reg_type": "discrete",
+                "address": 1,
+                "type": "switch",
+                "enabled": false,
+                "group": "inputs"
+            },
+            {
+                "name": "Input 2 Counter",
+                "reg_type": "input",
+                "address": 278,
+                "type": "value",
+                "enabled": false,
+                "group": "inputs"
             },
             {
                 "name": "Input Voltage",
                 "reg_type": "input",
                 "address": 121,
                 "scale": 0.001,
-                "type": "voltage"
+                "type": "voltage",
+                "enabled": false,
+                "group": "hw_info"
             },
             {
                 "name": "Serial",
-                "type": "text",
                 "reg_type": "input",
                 "address": 270,
-                "format": "u32"
+                "type": "text",
+                "format": "u32",
+                "group": "hw_info"
             },
             {
                 "name": "Uptime",
                 "reg_type": "input",
                 "address": 104,
                 "format": "u32",
-                "enabled": false
+                "enabled": false,
+                "group": "hw_info"
+            },
+            {
+                "name": "Minimum Voltage Since Startup",
+                "reg_type": "input",
+                "address": 122,
+                "scale": 0.001,
+                "type": "voltage",
+                "enabled": false,
+                "group": "hw_info"
+            },
+            {
+                "name": "MCU Temperature",
+                "reg_type": "input",
+                "address": 124,
+                "type": "temperature",
+                "format": "s16",
+                "scale": 0.1,
+                "enabled": false,
+                "group": "hw_info"
+            },
+            {
+                "name": "MCU Voltage",
+                "reg_type": "input",
+                "address": 123,
+                "scale": 0.001,
+                "type": "voltage",
+                "enabled": false,
+                "group": "debug"
+            },
+            {
+                "name": "VOC Version",
+                "reg_type": "input",
+                "address": 108,
+                "error_value": "0xFFFF",
+                "enabled": false,
+                "group": "debug"
+            },
+            {
+                "name": "VOC Raw",
+                "reg_type": "input",
+                "address": 107,
+                "error_value": "0xFFFF",
+                "enabled": false,
+                "group": "debug"
+            },
+            {
+                "name": "Illuminance Mode",
+                "reg_type": "holding",
+                "address": 103,
+                "readonly": true,
+                "enabled": false,
+                "group": "debug"
+            },
+            {
+                "name": "Successful TH Readings",
+                "reg_type": "input",
+                "address": 101,
+                "enabled": false,
+                "group": "debug"
+            },
+            {
+                "name": "Erroneous TH Readings",
+                "reg_type": "input",
+                "address": 102,
+                "enabled": false,
+                "group": "debug"
             }
         ]
+
     }
 }
