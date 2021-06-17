@@ -6,98 +6,485 @@
         "max_read_registers": 0,
         "response_timeout_ms": 1,
         "frame_timeout_ms": 8,
+
+        "groups": [
+            {
+                "title": "Counters",
+                "id": "counters",
+                "order": 1
+            },
+            {
+                "title": "Input S1",
+                "id": "input_s1",
+                "order": 2
+            },
+            {
+                "title": "Input S2",
+                "id": "input_s2",
+                "order": 3
+            },
+            {
+                "title": "Input S3",
+                "id": "input_s3",
+                "order": 4
+            },
+            {
+                "title": "Input F1",
+                "id": "input_f1",
+                "order": 5
+            },
+            {
+                "title": "Input F2",
+                "id": "input_f2",
+                "order": 6
+            },
+            {
+                "title": "Input F3",
+                "id": "input_f3",
+                "order": 7
+            },
+            {
+                "title": "Outputs",
+                "id": "outputs",
+                "order": 8
+            },
+            {
+                "title": "HW Info",
+                "id": "hw_info",
+                "order": 9
+            }
+        ],
+
+        "setup": [
+            {
+                "title": "disable legacy input mode control",
+                "reg_type": "holding",
+                "address": 5,
+                "value": 0
+            }
+        ],
+
+        "parameters": {
+            "in1_mode": {
+                "title": "Input S1 Mode",
+                "address": 9,
+                "reg_type": "holding",
+                "enum": [ 0, 1, 2, 3, 4, 5 ],
+                "default": 4,
+                "enum_titles": [
+                    "push button",
+                    "latching switch",
+                    "turn off all outputs",
+                    "control disabled",
+                    "operate according to mapping-matix",
+                    "operate according to mapping-matix, repeat action in 20 min if input still activated"
+                ],
+                "group": "input_s1",
+                "order": 1
+            },
+            "in1_debounce_ms": {
+                "title": "Input S1 Debounce (ms)",
+                "address": 20,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_s1",
+                "order": 2
+            },
+            "in2_mode": {
+                "title": "Input S2 Mode",
+                "address": 10,
+                "reg_type": "holding",
+                "enum": [ 0, 1, 2, 3, 4, 5 ],
+                "default": 4,
+                "enum_titles": [
+                    "push button",
+                    "latching switch",
+                    "turn off all outputs",
+                    "control disabled",
+                    "operate according to mapping-matix",
+                    "operate according to mapping-matix, repeat action in 20 min if input still activated"
+                ],
+                "group": "input_s2",
+                "order": 1
+            },
+            "in2_debounce_ms": {
+                "title": "Input S2 Debounce (ms)",
+                "address": 21,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_s2",
+                "order": 2
+            },
+            "in3_mode": {
+                "title": "Input S3 Mode",
+                "address": 11,
+                "reg_type": "holding",
+                "enum": [ 0, 1, 2, 3, 4, 5 ],
+                "default": 4,
+                "enum_titles": [
+                    "push button",
+                    "latching switch",
+                    "turn off all outputs",
+                    "control disabled",
+                    "operate according to mapping-matix",
+                    "operate according to mapping-matix, repeat action in 20 min if input still activated"
+                ],
+                "group": "input_s3",
+                "order": 1
+            },
+            "in3_debounce_ms": {
+                "title": "Input S3 Debounce (ms)",
+                "address": 22,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_s3",
+                "order": 2
+            },
+            "in4_mode": {
+                "title": "Input F1 Mode",
+                "address": 12,
+                "reg_type": "holding",
+                "enum": [ 0, 1, 2, 3, 4, 5 ],
+                "default": 5,
+                "enum_titles": [
+                    "push button",
+                    "latching switch",
+                    "turn off all outputs",
+                    "control disabled",
+                    "operate according to mapping-matix",
+                    "operate according to mapping-matix, repeat action in 20 min if input still activated"
+                ],
+                "group": "input_f1",
+                "order": 1
+            },
+            "in4_debounce_ms": {
+                "title": "Input F1 Debounce (ms)",
+                "address": 23,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_f1",
+                "order": 2
+            },
+            "in5_mode": {
+                "title": "Input F2 Mode",
+                "address": 13,
+                "reg_type": "holding",
+                "enum": [ 0, 1, 2, 3, 4, 5 ],
+                "default": 5,
+                "enum_titles": [
+                    "push button",
+                    "latching switch",
+                    "turn off all outputs",
+                    "control disabled",
+                    "operate according to mapping-matix",
+                    "operate according to mapping-matix, repeat action in 20 min if input still activated"
+                ],
+                "group": "input_f2",
+                "order": 1
+            },
+            "in5_debounce_ms": {
+                "title": "Input F2 Debounce (ms)",
+                "address": 24,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_f2",
+                "order": 2
+            },
+            "in6_mode": {
+                "title": "Input F3 Mode",
+                "address": 14,
+                "reg_type": "holding",
+                "enum": [ 0, 1, 2, 3, 4, 5 ],
+                "default": 5,
+                "enum_titles": [
+                    "push button",
+                    "latching switch",
+                    "turn off all outputs",
+                    "control disabled",
+                    "operate according to mapping-matix",
+                    "operate according to mapping-matix, repeat action in 20 min if input still activated"
+                ],
+                "group": "input_f3",
+                "order": 1
+            },
+            "in6_debounce_ms": {
+                "title": "Input F3 Debounce (ms)",
+                "address": 25,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_f3",
+                "order": 2
+            },
+            "outputs_restore_state": {
+                "title": "Restore Last Outputs State After Power On",
+                "address": 6,
+                "reg_type": "holding",
+                "enum": [ 0, 1 ],
+                "default": 0,
+                "enum_titles": [
+                    "no",
+                    "yes"
+                ],
+                "group": "outputs",
+                "order": 1
+            },
+            "safety_timer_s": {
+                "title": "Safety Timer (s)",
+                "address": 8,
+                "reg_type": "holding",
+                "default": 3600,
+                "group": "outputs",
+                "order": 2
+            }
+        },
+
         "channels": [  
-            {
-                "name": "K1",
-                "reg_type": "coil",
-                "type": "switch",
-                "address": 0
-            },
-            {
-                "name": "K2",
-                "reg_type": "coil",
-                "type": "switch",
-                "address": 1
-            },
-            {
-                "name": "Alarm",
-                "reg_type": "coil",
-                "type": "switch",
-                "address": 2
-            },
-            {
-                "name": "S1",
-                "reg_type": "discrete",
-                "type": "switch",
-                "address": 0
-            },
-            {
-                "name": "S2",
-                "reg_type": "discrete",
-                "type": "switch",
-                "address": 1
-            },
-            {
-                "name": "S3",
-                "reg_type": "discrete",
-                "type": "switch",
-                "address": 2
-            },
-            {
-                "name": "F1",
-                "reg_type": "discrete",
-                "type": "switch",
-                "address": 3
-            },
-            {
-                "name": "F2",
-                "reg_type": "discrete",
-                "type": "switch",
-                "address": 4
-            },
-            {
-                "name": "F3",
-                "reg_type": "discrete",
-                "type": "switch",
-                "address": 5
-            },
             {
                 "name": "P1 Counter",
                 "reg_type": "input",
-                "type": "value",
-                "readonly": true,
                 "address": 316,
-                "format": "u32"
+                "type": "value",
+                "format": "u32",
+                "group": "counters"
+            },
+            {
+                "name": "P1 Counter Offset",
+                "reg_type": "holding",
+                "address": 312,
+                "type": "value",
+                "format": "u32",
+                "enabled": false,
+                "group": "counters"
             },
             {
                 "name": "P2 Counter",
                 "reg_type": "input",
-                "type": "value",
-                "readonly": true,
                 "address": 318,
-                "format": "u32"
+                "type": "value",
+                "format": "u32",
+                "group": "counters"
+            },
+            {
+                "name": "P2 Counter Offset",
+                "reg_type": "holding",
+                "address": 314,
+                "type": "value",
+                "format": "u32",
+                "enabled": false,
+                "group": "counters"
+            },
+            {
+                "name": "S1",
+                "reg_type": "discrete",
+                "address": 0,
+                "type": "switch",
+                "group": "input_s1"
+            },
+            {
+                "name": "S1 Counter",
+                "reg_type": "input",
+                "address": 32,
+                "type": "value",
+                "group": "input_s1"
+            },
+            {
+                "name": "S1 Freq",
+                "reg_type": "input",
+                "address": 40,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-05,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_s1"
+            },
+            {
+                "name": "S2",
+                "reg_type": "discrete",
+                "address": 1,
+                "type": "switch",
+                "group": "input_s2"
+                
+            },
+            {
+                "name": "S2 Counter",
+                "reg_type": "input",
+                "address": 33,
+                "type": "value",
+                "group": "input_s2"
+            },
+            {
+                "name": "S2 Freq",
+                "reg_type": "input",
+                "address": 42,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-05,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_s2"
+            },
+            {
+                "name": "S3",
+                "reg_type": "discrete",
+                "address": 2,
+                "type": "switch",
+                "group": "input_s3"
+                
+            },
+            {
+                "name": "S3 Counter",
+                "reg_type": "input",
+                "address": 34,
+                "type": "value",
+                "group": "input_s3"
+            },
+            {
+                "name": "S3 Freq",
+                "reg_type": "input",
+                "address": 44,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-05,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_s3"
+            },
+            {
+                "name": "F1",
+                "reg_type": "discrete",
+                "address": 3,
+                "type": "switch",
+                "group": "input_f1"
+            },
+            {
+                "name": "F1 Counter",
+                "reg_type": "input",
+                "address": 35,
+                "type": "value",
+                "group": "input_f1"
+            },
+            {
+                "name": "F1 Freq",
+                "reg_type": "input",
+                "address": 46,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-05,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_f1"
+            },
+            {
+                "name": "F2",
+                "reg_type": "discrete",
+                "address": 4,
+                "type": "switch",
+                "group": "input_f2"
+            },
+            {
+                "name": "F2 Counter",
+                "reg_type": "input",
+                "address": 36,
+                "type": "value",
+                "group": "input_f2"
+            },
+            {
+                "name": "F2 Freq",
+                "reg_type": "input",
+                "address": 48,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-05,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_f2"
+            },
+            {
+                "name": "F3",
+                "reg_type": "discrete",
+                "address": 5,
+                "type": "switch",
+                "group": "input_f3"
+            },
+            {
+                "name": "F3 Counter",
+                "reg_type": "input",
+                "address": 37,
+                "type": "value",
+                "group": "input_f3"
+            },
+            {
+                "name": "F3 Freq",
+                "reg_type": "input",
+                "address": 50,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-05,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_f3"
+            },
+            {
+                "name": "K1",
+                "reg_type": "coil",
+                "address": 0,
+                "type": "switch",
+                "group": "outputs"
+            },
+            {
+                "name": "K2",
+                "reg_type": "coil",
+                "address": 1,
+                "type": "switch",
+                "group": "outputs"
+            },
+            {
+                "name": "Alarm",
+                "reg_type": "coil",
+                "address": 2,
+                "type": "switch",
+                "group": "outputs"
+            },
+            {
+                "name": "Serial",
+                "reg_type": "input",
+                "address": 270,
+                "type": "text",
+                "format": "u32",
+                "group": "hw_info"
             },
             {
                 "name": "Input Voltage",
                 "reg_type": "input",
                 "address": 121,
+                "type": "voltage",
                 "scale": 0.001,
-                "type": "voltage"
-            },
-            {
-                "name": "Serial",
-                "type": "text",
-                "reg_type": "input",
-                "address": 270,
-                "format": "u32"
+                "enabled": false,
+                "group": "hw_info"
             },
             {
                 "name": "Uptime",
                 "reg_type": "input",
                 "address": 104,
+                "type": "text",
                 "format": "u32",
-                "enabled": false
+                "enabled": false,
+                "group": "hw_info"
             }
         ]
+        
     }
 }
