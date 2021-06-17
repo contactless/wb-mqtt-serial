@@ -1,151 +1,389 @@
 {
-  "device_type": "WB-MCM8",
-  "device": {
-    "name": "WB-MCM8",
-    "id": "wb-mcm8",
-    "max_read_registers": 0,
-    "response_timeout_ms": 1,
-    "frame_timeout_ms": 8,
-    "channels": [
-      {
-        "name": "Input 1 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 60,
-        "type": "value"
-      },
-      {
-        "name": "Input 2 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 62,
-        "type": "value"
-      },
-      {
-        "name": "Input 3 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 64,
-        "type": "value"
-      },
-      {
-        "name": "Input 4 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 66,
-        "type": "value"
-      },
-      {
-        "name": "Input 5 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 68,
-        "type": "value"
-      },
-      {
-        "name": "Input 6 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 70,
-        "type": "value"
-      },
-      {
-        "name": "Input 7 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 72,
-        "type": "value"
-      },
-      {
-        "name": "Input 8 counter",
-        "reg_type": "input",
-        "readonly": true,
-        "format": "u32",
-        "address": 74,
-        "type": "value"
-      },
-      {
-        "name": "Input 1",
-        "reg_type": "discrete",
-        "address": 0,
-        "type": "switch"
-      },
-      {
-        "name": "Input 2",
-        "reg_type": "discrete",
-        "address": 1,
-        "type": "switch"
-      },
-      {
-        "name": "Input 3",
-        "reg_type": "discrete",
-        "address": 2,
-        "type": "switch"
-      },
-      {
-        "name": "Input 4",
-        "reg_type": "discrete",
-        "address": 3,
-        "type": "switch"
-      },
-      {
-        "name": "Input 5",
-        "reg_type": "discrete",
-        "address": 4,
-        "type": "switch"
-      },
-      {
-        "name": "Input 6",
-        "reg_type": "discrete",
-        "address": 5,
-        "type": "switch"
-      },
-      {
-        "name": "Input 7",
-        "reg_type": "discrete",
-        "address": 6,
-        "type": "switch"
-      },
-      {
-        "name": "Input 8",
-        "reg_type": "discrete",
-        "address": 7,
-        "type": "switch"
-      },
-      {
-        "name": "Reset all counters",
-        "reg_type": "holding",
-        "address": 100,
-        "type": "pushbutton"
-      },
-      {
-        "name": "Supply voltage",
-        "reg_type": "input",
-        "address": 121,
-        "type": "voltage",
-        "scale": 0.001
-      },
-      {
-        "name": "Serial",
-        "type": "text",
-        "reg_type": "input",
-        "address": 270,
-        "format": "u32"
-      },
-      {
-        "name": "Uptime",
-        "reg_type": "input",
-        "address": 104,
-        "format": "u32",
-        "enabled": false
-      }
-    ]
-  }
+    "device_type": "WB-MCM8",
+    "device": {
+        "name": "WB-MCM8",
+        "id": "wb-mcm8",
+        "max_read_registers": 0,
+        "response_timeout_ms": 1,
+        "frame_timeout_ms": 8,
+
+        "groups": [
+            {
+                "title": "Input 1",
+                "id": "input_1",
+                "order": 1
+            },
+            {
+                "title": "Input 2",
+                "id": "input_2",
+                "order": 2
+            },
+            {
+                "title": "Input 3",
+                "id": "input_3",
+                "order": 3
+            },
+            {
+                "title": "Input 4",
+                "id": "input_4",
+                "order": 4
+            },
+            {
+                "title": "Input 5",
+                "id": "input_5",
+                "order": 5
+            },
+            {
+                "title": "Input 6",
+                "id": "input_6",
+                "order": 6
+            },
+            {
+                "title": "Input 7",
+                "id": "input_7",
+                "order": 7
+            },
+            {
+                "title": "Input 8",
+                "id": "input_8",
+                "order": 8
+            },
+            {
+                "title": "General",
+                "id": "general",
+                "order": 9
+            },
+            {
+                "title": "HW Info",
+                "id": "hw_info",
+                "order": 10
+            }
+        ],
+
+        "parameters": {
+            "in1_debounce_ms": {
+                "title": "Input 1 Debounce (ms)",
+                "address": 20,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_1",
+                "order": 1
+            },
+            "in2_debounce_ms": {
+                "title": "Input 2 Debounce (ms)",
+                "address": 21,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_2",
+                "order": 1
+            },
+            "in3_debounce_ms": {
+                "title": "Input 3 Debounce (ms)",
+                "address": 22,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_3",
+                "order": 1
+            },
+            "in4_debounce_ms": {
+                "title": "Input 4 Debounce (ms)",
+                "address": 23,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_4",
+                "order": 1
+            },
+            "in5_debounce_ms": {
+                "title": "Input 5 Debounce (ms)",
+                "address": 24,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_5",
+                "order": 1
+            },
+            "in6_debounce_ms": {
+                "title": "Input 6 Debounce (ms)",
+                "address": 25,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_6",
+                "order": 1
+            },
+            "in7_debounce_ms": {
+                "title": "Input 7 Debounce (ms)",
+                "address": 26,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_7",
+                "order": 1
+            },
+            "in8_debounce_ms": {
+                "title": "Input 8 Debounce (ms)",
+                "address": 27,
+                "reg_type": "holding",
+                "min": 0,
+                "max": 100,
+                "default": 50,
+                "group": "input_8",
+                "order": 1
+            }
+        },
+
+        "channels": [
+            {
+                "name": "Input 1",
+                "reg_type": "discrete",
+                "address": 0,
+                "type": "switch",
+                "group": "input_1"
+            },
+            {
+                "name": "Input 1 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 60,
+                "type": "value",
+                "group": "input_1"
+            },
+            {
+                "name": "Input 1 freq",
+                "reg_type": "input",
+                "address": 40,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_1"
+            },
+            {
+                "name": "Input 2",
+                "reg_type": "discrete",
+                "address": 1,
+                "type": "switch",
+                "group": "input_2"
+            },
+            {
+                "name": "Input 2 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 62,
+                "type": "value",
+                "group": "input_2"
+            },
+            {
+                "name": "Input 2 freq",
+                "reg_type": "input",
+                "address": 42,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_2"
+            },
+            {
+                "name": "Input 3",
+                "reg_type": "discrete",
+                "address": 2,
+                "type": "switch",
+                "group": "input_3"
+            },
+            {
+                "name": "Input 3 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 64,
+                "type": "value",
+                "group": "input_3"
+            },
+            {
+                "name": "Input 3 freq",
+                "reg_type": "input",
+                "address": 44,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_3"
+            },
+            {
+                "name": "Input 4",
+                "reg_type": "discrete",
+                "address": 3,
+                "type": "switch",
+                "group": "input_4"
+            },
+            {
+                "name": "Input 4 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 66,
+                "type": "value",
+                "group": "input_4"
+            },
+            {
+                "name": "Input 4 freq",
+                "reg_type": "input",
+                "address": 46,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_4"
+            },
+            {
+                "name": "Input 5",
+                "reg_type": "discrete",
+                "address": 4,
+                "type": "switch",
+                "group": "input_5"
+            },
+            {
+                "name": "Input 5 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 68,
+                "type": "value",
+                "group": "input_5"
+            },
+            {
+                "name": "Input 5 freq",
+                "reg_type": "input",
+                "address": 48,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_5"
+            },
+            {
+                "name": "Input 6",
+                "reg_type": "discrete",
+                "address": 5,
+                "type": "switch",
+                "group": "input_6"
+            },
+            {
+                "name": "Input 6 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 70,
+                "type": "value",
+                "group": "input_6"
+            },
+            {
+                "name": "Input 6 freq",
+                "reg_type": "input",
+                "address": 50,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_6"
+            },
+            {
+                "name": "Input 7",
+                "reg_type": "discrete",
+                "address": 6,
+                "type": "switch",
+                "group": "input_7"
+            },
+            {
+                "name": "Input 7 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 72,
+                "type": "value",
+                "group": "input_7"
+            },
+            {
+                "name": "Input 7 freq",
+                "reg_type": "input",
+                "address": 52,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_7"
+            },
+            {
+                "name": "Input 8",
+                "reg_type": "discrete",
+                "address": 7,
+                "type": "switch",
+                "group": "input_8"
+            },
+            {
+                "name": "Input 8 counter",
+                "reg_type": "input",
+                "format": "u32",
+                "address": 74,
+                "type": "value",
+                "group": "input_8"
+            },
+            {
+                "name": "Input 8 freq",
+                "reg_type": "input",
+                "address": 54,
+                "type": "value",
+                "format": "u32",
+                "scale": 1.52588e-5,
+                "round_to": 0.001,
+                "enabled": false,
+                "group": "input_8"
+            },
+            {
+                "name": "Reset all counters",
+                "reg_type": "holding",
+                "address": 100,
+                "type": "pushbutton",
+                "group": "general"
+            },
+            {
+                "name": "Serial",
+                "reg_type": "input",
+                "address": 270,
+                "type": "text",
+                "format": "u32",
+                "group": "hw_info"
+            },
+            {
+                "name": "Supply voltage",
+                "reg_type": "input",
+                "address": 121,
+                "type": "voltage",
+                "scale": 0.001,
+                "enabled": false,
+                "group": "hw_info"
+            },
+            {
+                "name": "Uptime",
+                "reg_type": "input",
+                "address": 104,
+                "format": "u32",
+                "enabled": false,
+                "group": "hw_info"
+            }
+        ]
+    }
 }
