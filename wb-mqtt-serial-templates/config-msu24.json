@@ -10,7 +10,7 @@
 				"name": "Illuminance",
 				"reg_type": "input",
 				"address": 0,
-				"type": "text"
+				"type": "lux"
 			},
 			{
 				"name": "Temp 1",

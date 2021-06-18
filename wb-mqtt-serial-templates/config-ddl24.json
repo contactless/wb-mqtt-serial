@@ -49,7 +49,7 @@
 				"name": "Voltage",
 				"reg_type": "holding",
 				"address": 18,
-				"type": "text"
+				"type": "voltage"
 			}
 		]
 	}

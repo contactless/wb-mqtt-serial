@@ -1,3 +1,9 @@
+wb-mqtt-serial (2.17.0) stable; urgency=medium
+
+  * "value" instead of "text" is set as default control type for Modbus devices
+
+ -- Petr Krasnoshchekov <petr.krasnoshchekov@wirenboard.ru>  Fri, 04 Jun 2021 15:39:00 +0500
+
 wb-mqtt-serial (2.16.5) stable; urgency=medium
 
   * Remake of templates Modbus relay modules WB-MRxx using groups and parameters

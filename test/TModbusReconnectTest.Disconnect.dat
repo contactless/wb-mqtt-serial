@@ -4,13 +4,14 @@ Publish: /devices/modbus/meta/name: 'Modbus' (QoS 1, retained)
 Publish: /devices/modbus/controls/Ch 0/meta/error: '' (QoS 1, retained)
 Publish: /devices/modbus/controls/Ch 0/meta/order: '1' (QoS 1, retained)
 Publish: /devices/modbus/controls/Ch 0/meta/readonly: '0' (QoS 1, retained)
-Publish: /devices/modbus/controls/Ch 0/meta/type: 'text' (QoS 1, retained)
-Publish: /devices/modbus/controls/Ch 0: '' (QoS 1, retained)
+Publish: /devices/modbus/controls/Ch 0/meta/type: 'value' (QoS 1, retained)
+Publish: /devices/modbus/controls/Ch 0: '0' (QoS 1, retained)
 Subscribe: /devices/modbus/controls/Ch 0/on (QoS 0)
 Subscribe: /devices/modbus/controls/# (QoS 0)
+(retain) -> /devices/modbus/controls/Ch 0: '0' (QoS 1, retained)
 (retain) -> /devices/modbus/controls/Ch 0/meta/order: '1' (QoS 1, retained)
 (retain) -> /devices/modbus/controls/Ch 0/meta/readonly: '0' (QoS 1, retained)
-(retain) -> /devices/modbus/controls/Ch 0/meta/type: 'text' (QoS 1, retained)
+(retain) -> /devices/modbus/controls/Ch 0/meta/type: 'value' (QoS 1, retained)
 Unsubscribe -- em-test: /devices/modbus/controls/#
 >>> LoopOnce() [connected]
 Open()
@@ -21,15 +22,15 @@ EnqueueHoldingSingleWriteU16Response()
 EnqueueHoldingReadU16Response()
 >> 01 03 00 46 00 01 65 DF
 << 01 03 02 00 15 79 8B
+Publish: /devices/modbus/controls/Ch 0: '21' (QoS 1, retained)
 >>> LoopOnce() [on-line]
 EnqueueHoldingReadU16Response()
 >> 01 03 00 46 00 01 65 DF
 << 01 03 02 00 15 79 8B
-Publish: /devices/modbus/controls/Ch 0: '21' (QoS 1, retained)
-Publish: /devices/modbus/controls/Ch 0: '21' (QoS 1, retained)
 >>> LoopOnce() [disconnected]
 EnqueueHoldingReadU16Response()
 >> 01 03 00 46 00 01 65 DF
+Publish: /devices/modbus/controls/Ch 0/meta/error: 'r' (QoS 1, retained)
 >>> LoopOnce() [connected2]
 Sleep(5000)
 EnqueueHoldingSingleWriteU16Response()
@@ -38,10 +39,8 @@ EnqueueHoldingSingleWriteU16Response()
 EnqueueHoldingReadU16Response()
 >> 01 03 00 46 00 01 65 DF
 << 01 03 02 00 15 79 8B
-Close()
-Publish: /devices/modbus/controls/Ch 0/meta/error: 'r' (QoS 1, retained)
 Publish: /devices/modbus/controls/Ch 0/meta/error: '' (QoS 1, retained)
-Publish: /devices/modbus/controls/Ch 0: '21' (QoS 1, retained)
+Close()
 Unsubscribe -- em-test: /devices/modbus/controls/Ch 0/on
 Publish: /devices/modbus/controls/Ch 0: '' (QoS 1, retained)
 Publish: /devices/modbus/controls/Ch 0/meta/order: '' (QoS 1, retained)

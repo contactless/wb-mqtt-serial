@@ -25,7 +25,7 @@ namespace
 
     const TRegisterTypes RegisterTypes{
         { TUnielDevice::REG_RELAY,      "relay",      "switch", U8 },
-        { TUnielDevice::REG_INPUT,      "input",      "text",   U8, true },
+        { TUnielDevice::REG_INPUT,      "input",      "value",  U8, true },
         { TUnielDevice::REG_PARAM,      "param",      "value",  U8 },
         // "value", not "range" because 'max' cannot be specified here.
         { TUnielDevice::REG_BRIGHTNESS, "brightness", "value",  U8 }

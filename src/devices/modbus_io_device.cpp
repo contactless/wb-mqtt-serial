@@ -5,10 +5,10 @@
 namespace 
 {
     const TRegisterTypes ModbusIORegisterTypes({
-            { Modbus::REG_HOLDING, "holding", "text", U16 },
+            { Modbus::REG_HOLDING, "holding", "value", U16 },
             { Modbus::REG_COIL, "coil", "switch", U8 },
             { Modbus::REG_DISCRETE, "discrete", "switch", U8, true },
-            { Modbus::REG_INPUT, "input", "text", U16, true }
+            { Modbus::REG_INPUT, "input", "value", U16, true }
         });
 
     int GetSecondaryId(const std::string& fullId)
