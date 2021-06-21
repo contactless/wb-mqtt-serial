@@ -1019,12 +1019,12 @@
           "enum": [2, 5, 6, 7, 8, 9],
           "options": {
             "enum_titles": [
-              "Ø30 DC Serie",
+              "Sonesse 30 DC",
               "RTS transmitter",
               "Glydea",
-              "Ø50 AC Serie",
-              "Ø50 DC Serie",
-              "Ø40 AC Serie"
+              "Sonesse 50 AC",
+              "Sonesse 50 DC",
+              "Sonesse 40 AC"
             ]
           },
           "default": 2,

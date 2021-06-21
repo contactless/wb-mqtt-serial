@@ -1,3 +1,9 @@
+wb-mqtt-serial (2.16.6) stable; urgency=medium
+
+  * Change Somfy Enums
+
+ -- Alexander Degtyarev <a.degtyarev@wirenboard.com>  Пн, 21 Jun 2021 10:44:05 +0400
+ 
 wb-mqtt-serial (2.16.5) stable; urgency=medium
 
   * Remake of templates Modbus relay modules WB-MRxx using groups and parameters
