@@ -1,3 +1,9 @@
+wb-mqtt-serial (2.18.1) stable; urgency=medium
+
+  * BAC-6000-Series template was added
+
+ -- Alexander Degtyarev <a.degtyarev@wirenboard.com>  Tue, 13 Jul 2021 13:58:25 +0400 
+
 wb-mqtt-serial (2.18.0) stable; urgency=medium
 
   * Support for parameter description in device templates is added.

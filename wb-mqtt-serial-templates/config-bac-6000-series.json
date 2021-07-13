@@ -1,0 +1,51 @@
+      {
+ "device_type": "BAC-6000 Series",
+ "device": {
+  "name": "BAC-6000 Series",
+  "id": "bac-6000-series", 
+  "channels": [
+    {
+    "name": "Lock buttons",
+    "reg_type": "holding",
+    "address": "5",
+    "type": "switch",
+    "format": "s16"
+   },
+   {
+    "name": "Room temperature",
+    "reg_type": "holding",
+    "address": "3",
+    "type": "temperature",
+    "format": "s16",
+    "scale": 0.5,
+    "readonly": true
+   },
+   {
+    "name": "Fan Speed",
+    "reg_type": "holding",
+    "address": "1",
+    "type": "range",
+    "format": "s16",
+    "max": 3
+   },
+   {
+    "name": "Setting Mode",
+    "reg_type": "holding",
+    "address": "2",
+    "type": "range",
+    "format": "s16",
+    "max": 2
+   },
+   {
+    "name": "Setting temperature",
+    "reg_type": "holding",
+    "address": "4",
+    "type": "range",
+    "format": "s16",
+    "scale": 0.5,
+    "min": 10,
+    "max": 30
+   }
+  ]
+ }
+}
