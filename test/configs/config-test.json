@@ -345,6 +345,27 @@
                             "error_value": "0x7FFFFFFF"
                         }
                     ]
+                },
+                {
+                    "name": "ControlTitleTest",
+                    "id": "ControlTitleTest",
+                    "slave_id": "0x12",
+                    "protocol": "fake",
+                    "channels": [
+                        {
+                            "name" : "Control name",
+                            "id": "control_id",
+                            "reg_type" : "fake",
+                            "format" : "s16",
+                            "address" : 0
+                        },
+                        {
+                            "name" : "Control no name",
+                            "reg_type" : "fake",
+                            "format" : "s16",
+                            "address" : 1
+                        }
+                    ]
                 }
             ]
         }

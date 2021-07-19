@@ -3,12 +3,12 @@ Maintainer: Evgeny Boger <boger@contactless.ru>
 Section: misc
 Priority: optional
 Standards-Version: 3.9.2
-Build-Depends: debhelper (>= 10), pkg-config, libwbmqtt1-2-dev (>= 2.2.2), libwbmqtt1-2-test-utils (>= 2.2.2)
+Build-Depends: debhelper (>= 10), pkg-config, libwbmqtt1-2-dev (>= 2.3.0), libwbmqtt1-2-test-utils (>= 2.3.0)
 Homepage: https://github.com/wirenboard/wb-mqtt-serial
 
 Package: wb-mqtt-serial
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ucf, bsdutils (>= 2.29), libwbmqtt1-2 (>= 2.2.2)
+Depends: ${shlibs:Depends}, ${misc:Depends}, ucf, bsdutils (>= 2.29), libwbmqtt1-2 (>= 2.3.0)
 Replaces: wb-homa-modbus (<< 1.14.1)
 Breaks: wb-homa-modbus (<< 1.14.1), wb-mqtt-confed (<< 1.2.5), wb-mqtt-homeui (<< 2.1.0)
 Description: Wiren Board Smart Home MQTT serial protocol driver

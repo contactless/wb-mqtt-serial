@@ -265,6 +265,10 @@ TControlArgs TSerialPortDriver::From(const PDeviceChannel & channel)
         args.SetPrecision(channel->Precision);
     }
 
+    if (channel->Name != channel->MqttId) {
+        args.SetTitle(channel->Name);
+    }
+
     return args;
 }
 

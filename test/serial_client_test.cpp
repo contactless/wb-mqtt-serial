@@ -1059,6 +1059,12 @@ void TSerialClientIntegrationTest::PublishWaitOnValue(const std::string & topic,
     done->GetFuture().Sync();
 }
 
+TEST_F(TSerialClientIntegrationTest, ControlTitle)
+{
+    FilterConfig("ControlTitleTest");
+    SerialDriver = make_shared<TMQTTSerialDriver>(Driver, Config);
+}
+
 TEST_F(TSerialClientIntegrationTest, OnValue)
 {
     FilterConfig("OnValueTest");

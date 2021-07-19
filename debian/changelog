@@ -1,3 +1,9 @@
+wb-mqtt-serial (2.23.0) stable; urgency=medium
+
+  * /meta/name support for controls is added
+
+ -- Petr Krasnoshchekov <petr.krasnoshchekov@wirenboard.ru>  Mon, 19 Jul 2021 16:00:24 +0500
+
 wb-mqtt-serial (2.22.1) stable; urgency=medium
 
   * guard_interval_us description for web-interface is updated
